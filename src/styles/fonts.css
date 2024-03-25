@@ -1,0 +1,54 @@
+
+/* Raleway Styles */
+.raleway {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 135.3%;
+  font-variant: small-caps;
+}
+
+.raleway-regular {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135.3%;
+  font-variant: small-caps;
+}
+
+.raleway-lineheight {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135.3%;
+
+  font-variant: small-caps;
+  vertical-align: middle;
+}
+
+/* Montserrat Styles */
+.montserrat{
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 135.3%;
+  font-variant: small-caps;
+}
+
+.montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135.3%;
+  font-variant: small-caps;
+  color: #000000;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 135.3%;
+  font-variant: small-caps;
+  vertical-align: middle;
+}

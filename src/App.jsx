@@ -1,6 +1,5 @@
-import './App.css';
-import RootLayout from './components/RootLayout';
-
+import './styles/App.css';
+import RootLayout from './components/RootLayout/Index';
 
 export default function App() {
   return (

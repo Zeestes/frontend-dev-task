@@ -1,11 +1,11 @@
-import '../App.css';
-import Menu from "."
 
-export default AppBar = props =>  {
+import Logo from './Logo';
+
+export default function AppBar(props) {
 
   return (
         <div className="AppBar">
-          
+          <Logo></Logo>
         </div>
   );
 }
