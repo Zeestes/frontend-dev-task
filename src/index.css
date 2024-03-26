@@ -1,8 +1,19 @@
 @import url('./styles/fonts.css');
 @import url('./styles/App.css');
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../public/fonts/Montserrat.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../public/fonts/Raleway.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Raleway', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,15 +1,7 @@
-p a {
-  color: #41b7d8;
-}
+@import url("./fonts.css");
 
 .App {
   text-align: center;
-}
-
-.Logo {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  color: white;
 }
 
 .Layout {
@@ -61,31 +53,76 @@ p a {
   background-color: rgba(19, 52, 87, 0.87);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .AppBar{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Logo {
+  height: 34px;
+  width: auto;
+}
+
+.Logo-phone {
+  width: 96px;
+  height: auto;
+}
+
+.Menu {
+  width: 608px;
+  height: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 205px;
+  height: auto;
 }
 
 main {
-  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 800px;
+  height: 401px;
+}
+
+.subtitle{
+  border-left: 1px solid white;
+}
+
+.subtitleText {
+  opacity: 0.5;
+  text-align: justify;
 }
 
 .GHPage {
   padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+text{
+  color:white
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
