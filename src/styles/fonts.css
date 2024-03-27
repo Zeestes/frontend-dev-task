@@ -1,4 +1,3 @@
-
 /* Raleway Styles */
 .raleway {
   font-family: 'Raleway', sans-serif;
@@ -34,7 +33,7 @@
 }
 
 /* Montserrat Styles */
-.montserrat{
+.montserrat {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-variant: small-caps;
@@ -49,13 +48,13 @@
 }
 
 .montserrat.T1 {
-    font-size: 40px;
-    font-weight: 600;
+  font-size: 40px;
+  font-weight: 600;
 }
 .montserrat.T2 {
-    font-size: 18px;
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
 }
 .montserrat.T3 {
-    font-size: 14px;
+  font-size: 14px;
 }

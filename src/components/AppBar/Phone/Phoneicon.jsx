@@ -1,4 +1,3 @@
-
 export default function logo(props) {
   return (
     <svg
@@ -26,7 +25,5 @@ export default function logo(props) {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
-
-

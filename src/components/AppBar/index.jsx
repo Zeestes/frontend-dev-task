@@ -1,39 +1,40 @@
-import Logo from "../Logo";
-import Phone from "./Phone/index";
-import Menu from "./Menu/index";
+import Logo from '../Logo';
+import Phone from './Phone/index';
+import Menu from './Menu/index';
 
 const menuButtons = [
   {
-    text: "Обо мне",
-    link: ""
+    text: 'Обо мне',
+    link: '',
   },
   {
-    text: "Наставничество",
-    link: ""
+    text: 'Наставничество',
+    link: '',
   },
   {
-    text: "Мероприятия",
-    link: ""
+    text: 'Мероприятия',
+    link: '',
   },
   {
-    text: "Кейсы",
-    link: ""
+    text: 'Кейсы',
+    link: '',
   },
   {
-    text: "Отзывы",
-    link: ""
+    text: 'Отзывы',
+    link: '',
   },
   {
-    text: "Контакты",
-    link: ""
-  }
-]
-
+    text: 'Контакты',
+    link: '',
+  },
+];
 
 export default function AppBar(props) {
   return (
     <div className="AppBar">
-      <Logo className="Logo"></Logo>
+      <button>
+        <Logo className="Logo"></Logo>
+      </button>
       <Menu menuButtons={menuButtons} />
       <Phone />
     </div>
