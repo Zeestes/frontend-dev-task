@@ -113,7 +113,7 @@ export default function ContactForm({confirm,id}) {
             (document.getElementById("acceptalert").style.opacity = "0")
           }
         ></input>
-        <label for="accept">
+        <label htmlFor="accept">
           <text
             className="montserrat subtitleText"
             style={{

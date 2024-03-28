@@ -2,9 +2,26 @@ import CustomButton from '../../components/customButton';
 import { useRef } from "react";
 import Popup from '../../components/Popup';
 
+
 export default function AboutMePage() {
   
   const popupRef = useRef(null);
+  const currentDate = new Date();
+  const tech = currentDate
+  .toLocaleDateString()
+  .split("")
+  .filter((char) => !isNaN(char))
+  .reduce((acc, num) => acc + parseInt(num), 0);
+
+  let gbpRate = 0
+
+  fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+    .then(response => response.json())
+    .then(data => {
+        gbpRate = Math.round(data.Valute.GBP.Value);
+        // make use of gbpRate as needed
+    })
+    .catch(error => console.error(error));
 
   return (
     <div className="page">
@@ -48,7 +65,9 @@ export default function AboutMePage() {
             style={{ gridArea: "3 / 2 / 4 / 3", alignSelf: "end" }}
           />
         </div>
-        <div className="div2"></div>
+        <div className="mentor">
+          {/* <div className="mentor-img"></div> */}
+        </div>
         <div
           className="subtitle"
           style={{
@@ -58,7 +77,7 @@ export default function AboutMePage() {
             marginBottom: "60px",
           }}
         >
-          <text className="montserrat T1">10</text>
+          <text className="montserrat T1">{tech}</text>
           <text className="raleway T2 subtitleText">
             техник для достижения целей
           </text>
@@ -72,7 +91,7 @@ export default function AboutMePage() {
             marginBottom: "60px",
           }}
         >
-          <text className="montserrat T1">10</text>
+          <text className="montserrat T1">{`${gbpRate}%`}</text>
           <text className="raleway T2 subtitleText">
             увеличение личной продуктивности
           </text>

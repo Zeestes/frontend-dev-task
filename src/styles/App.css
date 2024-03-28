@@ -2,13 +2,20 @@
 
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .Layout {
   display: grid;
+  position: absolute;
   grid-template-columns: minmax(12px, 300px) auto auto auto minmax(12px, 300px);
   grid-template-rows: auto;
+  width: 100vw;
   height: 100vh;
+}
+.Layout.mobile{
+  grid-template-columns: 12px minmax(12px, auto) minmax(12px, auto) minmax(12px, auto) 12px;
 }
 
 .Layout-body {
@@ -22,16 +29,24 @@
 .Layout-background {
   background-image: url('/public/background.jpg');
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
   background-position: top;
   position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
   z-index: -1;
+  /* filter: blur(10px); */
+}
+
+.Layout-background::after {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  filter: blur(10px);
+  z-index: -1;
+  /* filter: blur(10px); */
+  background-color: rgba(19, 52, 87, 0.87);
 }
 
 .Layout-header {
@@ -42,19 +57,10 @@
   align-items: center;
   align-self: start;
   grid-area: 1 / 2 / 2 / 5;
-  z-index: 2;
+  z-index: 1;
+  max-width: 100vw;
 }
 
-.Layout-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  filter: blur(10px);
-  background-color: rgba(19, 52, 87, 0.87);
-}
 
 .AppBar {
   display: flex;
@@ -113,8 +119,18 @@
   height: 100%;
 }
 
-.div2 {
-  grid-area: 1 / 3 / 3 / 4;
+.mentor {
+    grid-area: 1 / 3 / 4 / 4;
+    margin-top: 110px;
+    width: 130%;
+}
+
+.mentor-img{
+  background-image: url("/public/mentor.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100%;
 }
 
 .center {
