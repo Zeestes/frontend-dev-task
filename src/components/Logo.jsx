@@ -1,4 +1,4 @@
-export default function logo() {
+export default function logo({style}) {
   return (
     <svg
       width="170"
@@ -6,6 +6,7 @@ export default function logo() {
       viewBox="0 0 170 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={style}
     >
       <path
         d="M0 24H2.51953L6.25 13.7461C6.33464 13.5117 6.40299 13.2871 6.45508 13.0723C6.51367 12.8574 6.56901 12.6458 6.62109 12.4375H6.69922C6.74479 12.6458 6.79688 12.8574 6.85547 13.0723C6.91406 13.2871 6.98568 13.5117 7.07031 13.7461L10.8008 24H13.6035L8.13477 9.71289H5.42969L0 24ZM2.76367 20.6797H10.6836L10.0391 18.707H3.4082L2.76367 20.6797Z"

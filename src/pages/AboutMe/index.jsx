@@ -1,48 +1,14 @@
 import CustomButton from '../../components/customButton';
-import { useState } from 'react';
+import { useRef } from "react";
+import Popup from '../../components/Popup';
 
 export default function AboutMePage() {
-  const [viewPopup, setViewPopup] = useState(false);
-
-  function handlePopupClick() {
-    setViewPopup(prevState => !prevState);
-  }
   
+  const popupRef = useRef(null);
+
   return (
     <div className="page">
-      <div className={`popup-call ${viewPopup ? "visible" : ""}`}>
-        <div>
-          <button onClick={handlePopupClick}>
-            <svg
-              width="33"
-              height="33"
-              viewBox="0 0 33 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                x1="1.70711"
-                y1="1.69853"
-                x2="32.1127"
-                y2="32.1041"
-                stroke="white"
-                stroke-opacity="0.8"
-                stroke-width="2"
-              />
-              <line
-                x1="1.29289"
-                y1="31.6984"
-                x2="31.6985"
-                y2="1.29282"
-                stroke="white"
-                stroke-opacity="0.8"
-                stroke-width="2"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div className={`popup-blur ${viewPopup ? "visible" : ""}`}></div>
+      <Popup ref={popupRef} />
       <div className="wrapper">
         <div className="center" style={{ gridArea: "2 / 1 / 2 / 3" }}>
           <div
@@ -70,7 +36,7 @@ export default function AboutMePage() {
             text="Записаться на консультацию"
             backgroundColor="white"
             textColor="#07305D"
-            onClick={handlePopupClick}
+            onClick={() => popupRef.current.handleOpen()}
             style={{ gridArea: "3 / 1 / 4 / 2", alignSelf: "end" }}
           />
           <CustomButton
