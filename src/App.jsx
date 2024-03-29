@@ -6,20 +6,18 @@ import $ from 'jquery';
 import useBreakpoints from './hooks/useBreakpoints/index';
 
 export default function App() {
-
   const active = useBreakpoints().active;
 
-  $(document).ready(function() {
-
-    if (active === "xs" || active === "sm") {
+  $(document).ready(function () {
+    if (active === 'xs' || active === 'sm') {
       // Добавить класс 'mobile' ко всем элементам
       $('*').addClass('mobile');
     } else {
-    // Удалить класс 'mobile' от всех элементов
-    $('*').removeClass('mobile');
-  }
-});
-  
+      // Удалить класс 'mobile' от всех элементов
+      $('*').removeClass('mobile');
+    }
+  });
+
   return (
     <div className="App">
       <RootLayout>

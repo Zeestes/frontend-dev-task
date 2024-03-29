@@ -6,7 +6,8 @@
             "request": "launch",
             "name": "Запустить программу",
             "runtimeArgs": [
-                "--openssl-legacy-provider"
+                "--openssl-legacy-provider",
+                "--inspect"
             ],
             "skipFiles": [
                 "<node_internals>/**"

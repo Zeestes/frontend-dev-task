@@ -1,28 +1,31 @@
-import {useImperativeHandle, forwardRef, useEffect } from "react";
-import $ from "jquery";
-import ContactForm from "../ContactForm";
-import Logo from "../Logo";
+import { useImperativeHandle, forwardRef, useEffect } from 'react';
+import $ from 'jquery';
+import ContactForm from '../ContactForm';
+import Logo from '../Logo';
 
 const Popup = forwardRef((props, ref) => {
-
   function confirmFrom(name, phone) {
-    localStorage.setItem("name", name);
-    localStorage.setItem("phone", phone);
-    $(".contact-form").slideUp({ complete: () => {$(".congrats-banner").slideDown();} });
+    localStorage.setItem('name', name);
+    localStorage.setItem('phone', phone);
+    $('.contact-form').slideUp({
+      complete: () => {
+        $('.congrats-banner').slideDown();
+      },
+    });
   }
 
   const handleСlose = () => {
-    $(".popup").fadeOut();
-    $(".popup-blur").fadeOut();
-    $(".congrats-banner").fadeOut();
-    $(".congrats-banner").fadeOut();
+    $('.popup').fadeOut();
+    $('.popup-blur').fadeOut();
+    $('.congrats-banner').fadeOut();
+    $('.congrats-banner').fadeOut();
   };
 
   const handleOpen = () => {
-    $(".popup").fadeIn();
-    $(".popup-blur").fadeIn();
-    $(".contact-form").fadeIn();
-    $(".congrats-banner").hide();
+    $('.popup').fadeIn();
+    $('.popup-blur').fadeIn();
+    $('.contact-form').fadeIn();
+    $('.congrats-banner').hide();
   };
 
   useImperativeHandle(ref, () => ({
@@ -31,20 +34,20 @@ const Popup = forwardRef((props, ref) => {
   }));
 
   useEffect(() => {
-    $(".popup").hide();
-    $(".popup-blur").hide();
-    $(".congrats-banner").hide();
-    document.getElementById("popup").style.visibility = "visible";
-  })
+    $('.popup').hide();
+    $('.popup-blur').hide();
+    $('.congrats-banner').hide();
+    document.getElementById('popup').style.visibility = 'visible';
+  });
 
   return (
-    <div id="popup" style={{ visibility: "hidden" }}>
+    <div id="popup" style={{ visibility: 'hidden' }}>
       <div className="popup-blur"></div>
       <div className="popup">
         <div className="popup-content">
           <button
             onClick={handleСlose}
-            style={{ maxWidth: "33px", height: "33px", alignSelf: "flex-end" }}
+            style={{ maxWidth: '33px', height: '33px', alignSelf: 'flex-end' }}
           >
             <svg
               width="33"
@@ -77,34 +80,34 @@ const Popup = forwardRef((props, ref) => {
           <div
             className="congrats-banner"
             style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyItems: "stretch",
-              height: "100%",
-              padding: "40px",
+              display: 'flex',
+              flexDirection: 'column',
+              justifyItems: 'stretch',
+              height: '100%',
+              padding: '40px',
             }}
           >
-            <div style={{ flex: 1, marginRight: "40px" }}>
+            <div style={{ flex: 1, marginRight: '40px' }}>
               <text
                 className="raleway contact-form-lable"
                 style={{
-                  fontSize: "50px",
+                  fontSize: '50px',
                 }}
               >
                 Спасибо за заявку
               </text>
             </div>
-            <div style={{ flex: 1, marginRight: "40px" }}>
+            <div style={{ flex: 1, marginRight: '40px' }}>
               <text
                 className="raleway contact-form-lable"
                 style={{
-                  fontSize: "40px",
+                  fontSize: '40px',
                 }}
               >
                 Я обязательно свяжусь с вами в ближайшее время.
               </text>
             </div>
-            <div style={{ alignSelf: "flex-end" }}>
+            <div style={{ alignSelf: 'flex-end' }}>
               <Logo></Logo>
             </div>
           </div>
@@ -115,4 +118,3 @@ const Popup = forwardRef((props, ref) => {
 });
 
 export default Popup;
-

@@ -13,10 +13,9 @@ export default function Breakpoint({ at, children }) {
   if (!at) {
     console.error('<Breakpoint>: must specify a breakpoint for the `at` prop.');
   }
-  
+
   const breakpoints = Array.isArray(at) ? at : [at];
   const { active } = useBreakpoints();
-  
+
   return breakpoints.includes(active) ? children : null;
 }
-

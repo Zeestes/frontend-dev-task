@@ -17,8 +17,11 @@
   height: 100vh;
   z-index: 1;
 }
-.Layout.mobile{
-  grid-template-columns: 15px minmax(15px, auto) minmax(15px, auto) minmax(15px, auto) 15px;
+.Layout.mobile {
+  grid-template-columns: 15px minmax(15px, auto) minmax(15px, auto) minmax(
+      15px,
+      auto
+    ) 15px;
 
   overflow-x: hidden;
 }
@@ -66,6 +69,10 @@
   max-width: 100vw;
 }
 
+.Layout-header.mobile {
+  position: fixed;
+  width: calc(100vw - 30px);
+}
 
 .AppBar {
   display: flex;
@@ -96,7 +103,7 @@
   margin-left: 15px;
 }
 
-.menu.mobile{
+.menu.mobile {
   justify-content: flex-end;
 }
 
@@ -111,10 +118,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: minmax(41px,205px);
+  width: minmax(41px, 205px);
   height: auto;
 }
-
 
 /* main {
   display: flex;
@@ -123,6 +129,9 @@
   align-items: start;
 } */
 
+.custom-button {
+  width: 380px;
+}
 
 .page {
   height: 100%;
@@ -137,18 +146,22 @@
   height: 100%;
 }
 
-.mentor {
-    grid-area: 1 / 3 / 4 / 4;
-    margin-top: 110px;
-    width: 130%;
+.wrapper.mobile {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.mentor.mobile{
+.mentor {
+  grid-area: 1 / 3 / 4 / 4;
+  margin-top: 110px;
+  width: 130%;
+}
+
+.mentor.mobile {
   overflow-x: hidden;
 }
 
-.mentor-img{
-  background-image: url("/public/mentor.png");
+.mentor-img {
+  background-image: url('/public/mentor.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -167,22 +180,10 @@
   grid-area: 2 / 1 / 2 / 3;
 }
 
-.center.mobile{
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr auto auto;
-  grid-area: 2 / 1 / 2 / 4
-}
-
 .header {
   text-align: left;
   grid-area: 1 / 1 / 2 / 3;
   max-width: 747px;
-}
-
-.header.mobile{
-  max-width: 330px;
-  grid-area: 1 / 1 / 2 / 3;
-  font-size: 25px;
 }
 
 .subtitle {
@@ -195,47 +196,70 @@
   align-items: flex-start;
 }
 
-.subtitle-center{
+.subtitle-center {
   max-width: 675px;
   grid-area: 2 / 1 / 3 / 3;
 }
 
-.subtitle-center.mobile{
-  
-  max-width:290px
-}
-
-.butterWhite{
+.butterWhite-container {
   align-self: end;
   grid-area: 3 / 1 / 4 / 2;
 }
-.butterWhite.mobile{
-  grid-area: 3 / 1 / 4 / 2;
-  scale: 0.5;
-}
 
-.buttonOther{
+.buttonOther-container {
   align-self: end;
   grid-area: 3 / 2 / 4 / 3;
 }
 
-.buttonOther.mobile{
-  grid-area: 4 / 1 / 5 / 2;
-  scale: 0.5;
+.center.mobile {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 1fr 1fr auto auto;
+  grid-area: 2 / 1 / 2 / 4;
+  justify-items: start;
 }
 
-.subtitle-quality{
-    grid-area: 3 / 1 / 3 / 2;
-    align-self: end;
-    width: 150px;
-    margin-bottom: 60px;
+.header.mobile {
+  max-width: 330px;
+  grid-area: 1 / 1 / 2 / 3;
+  font-size: 25px;
+}
+
+.subtitle-center.mobile {
+  grid-area: 2 / 1 / 3 / 3;
+  max-width: 290px;
+}
+
+.butterWhite.mobile {
+  scale: 0.7;
+}
+.buttonOther.mobile {
+  scale: 0.7;
+}
+
+.butterWhite-container.mobile {
+  display: flex;
+  align-items: flex-start;
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.buttonOther-container.mobile {
+  display: flex;
+  align-items: flex-start;
+  grid-area: 4 / 1 / 5 / 3;
+}
+
+.subtitle-quality {
+  grid-area: 3 / 1 / 3 / 2;
+  align-self: end;
+  width: 150px;
+  margin-bottom: 60px;
 }
 
 .subtitle-percent {
-    grid-area: 3 / 2 / 3 / 3;
-    align-self: end;
-    width: 200px;
-    margin-bottom: 60px;
+  grid-area: 3 / 2 / 3 / 3;
+  align-self: end;
+  width: 200px;
+  margin-bottom: 60px;
 }
 
 .subtitleText {
@@ -255,10 +279,12 @@ button {
   background-color: transparent;
   border: none;
   padding: 0;
-  transition: background-color 0.3s ease, transform 0.1s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
 }
 
-button.mobile:focus{
+button.mobile:focus {
   background-color: transparent;
 }
 
@@ -275,7 +301,7 @@ button:active {
   position: absolute;
   height: 100%;
   width: 600px;
-  background: #0F1D45;
+  background: #0f1d45;
   top: 0;
   bottom: 0;
   left: 0;
@@ -285,7 +311,7 @@ button:active {
   overflow: hidden;
 }
 
-.popup.mobile{
+.popup.mobile {
   width: 100vw;
 }
 
@@ -302,6 +328,11 @@ button:active {
   box-sizing: border-box;
 }
 
+.popup-content.mobile {
+  padding: 40px;
+  padding-left: 40px;
+}
+
 .popup-blur {
   position: absolute;
   top: 0;
@@ -311,16 +342,39 @@ button:active {
   /* backdrop-filter: blur(7.5px); лагает   */
   z-index: 2;
   opacity: 0.6;
-  background-color: #0F1D45
+  background-color: #0f1d45;
 }
 
-.contact-form{
+.contact-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
   height: 100%;
+  width: 100%;
+}
 
+.custom-button.contact-form-button.mobile {
+  width: 100%;
+}
+
+.contact-form-lable {
+  font-size: 50px;
+  margin-top: 40px;
+  text-align: left;
+  padding-right: 40px;
+}
+
+.contact-form-lable.mobile {
+  font-size: 30px;
+  margin-top: 20px;
+  padding-right: 0px;
+  text-align: left;
+}
+
+.contact-form-inputs-container {
+  display: flex;
+  flex-direction: column;
 }
 
 input {
@@ -350,13 +404,31 @@ input::placeholder {
   opacity: 0;
 }
 
-.custom-checkbox+label {
+.custom-checkbox + label {
   display: inline-flex;
   align-items: center;
   user-select: none;
 }
 
-.custom-checkbox+label::before {
+.custom-checkbox + label.mobile {
+  display: inline-flex;
+  align-items: flex-start;
+  user-select: none;
+}
+
+custom-checkbox-subtitle {
+  font-size: 16px;
+  margin-right: 95px;
+  text-align: left;
+}
+
+custom-checkbox-subtitle.mobile {
+  font-size: 16px;
+  margin-right: 40px;
+  text-align: left;
+}
+
+.custom-checkbox + label::before {
   content: '';
   display: inline-block;
   width: 30px;
@@ -370,39 +442,38 @@ input::placeholder {
   background-size: 50% 50%;
 }
 
-.custom-checkbox:checked+label::before {
+.custom-checkbox:checked + label::before {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 
 /* стили при наведении курсора на checkbox */
-.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
   background-color: rgba(255, 255, 255, 0.2);
-
 }
 
 /* стили для активного состояния чекбокса (при нажатии на него) */
-.custom-checkbox:not(:disabled):active+label::before {
+.custom-checkbox:not(:disabled):active + label::before {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: #b3d7ff;
-  scale: 0.90;
+  scale: 0.9;
 }
 
 /* стили для чекбокса, находящегося в фокусе */
-.custom-checkbox:focus+label::before {
+.custom-checkbox:focus + label::before {
   border-color: #b3d7ff;
 }
 
 /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-.custom-checkbox:focus:not(:checked)+label::before {
+.custom-checkbox:focus:not(:checked) + label::before {
   border-color: #80bdff;
 }
 
 /* стили для чекбокса, находящегося в состоянии disabled */
-.custom-checkbox:disabled+label::before {
+.custom-checkbox:disabled + label::before {
   background-color: #555555;
 }
 
-.alert-text{
+.alert-text {
   color: red;
   font-size: 14px;
   margin-top: 10px;

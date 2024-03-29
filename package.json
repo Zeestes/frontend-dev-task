@@ -6,7 +6,7 @@
     "fmt:fix": "npx prettier --single-quote -w src",
     "test": "react-scripts test",
     "test:all": "react-scripts test --watchAll=false",
-    "start": "react-scripts start",
+    "start": "react-scripts start --inspect",
     "build": "react-scripts build",
     "preversion": "git fetch --tags && yarn test-all",
     "version": "yarn build",

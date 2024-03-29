@@ -1,7 +1,6 @@
 import AppBar from '../AppBar';
 
 export default function RootLayout(props) {
-  
   return (
     <>
       <div className="Layout-background">
@@ -12,34 +11,34 @@ export default function RootLayout(props) {
           <div className="Layout-body">{props.children}</div>
           <div
             style={{
-              width: "1px",
-              backgroundColor: "white",
+              width: '1px',
+              backgroundColor: 'white',
               opacity: 0.08,
-              gridArea: "1 / 2 / 2 / 3",
+              gridArea: '1 / 2 / 2 / 3',
             }}
           ></div>
           <div
             style={{
-              width: "1px",
-              backgroundColor: "white",
+              width: '1px',
+              backgroundColor: 'white',
               opacity: 0.08,
-              gridArea: "1 / 3 / 2 / 4",
+              gridArea: '1 / 3 / 2 / 4',
             }}
           ></div>
           <div
             style={{
-              width: "1px",
-              backgroundColor: "white",
+              width: '1px',
+              backgroundColor: 'white',
               opacity: 0.08,
-              gridArea: "1 / 4 / 2 / 5",
+              gridArea: '1 / 4 / 2 / 5',
             }}
           ></div>
           <div
             style={{
-              width: "1px",
-              backgroundColor: "white",
+              width: '1px',
+              backgroundColor: 'white',
               opacity: 0.08,
-              gridArea: "1 / 5 / 2 / 6",
+              gridArea: '1 / 5 / 2 / 6',
             }}
           ></div>
         </div>

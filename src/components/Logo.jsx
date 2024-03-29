@@ -1,4 +1,4 @@
-export default function logo({style}) {
+export default function logo({ style }) {
   return (
     <div className="logo">
       <svg

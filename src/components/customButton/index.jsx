@@ -10,49 +10,48 @@ export default function CustomButton({
 }) {
   return (
     <button
-      className={className}
+      className={`custom-button ${className ? className : ''}`}
       onClick={onClick}
       style={{
-        display: "flex",
-        flexDirection: "row",
-        width: "380px",
-        justifyContent: "space-between",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         border: border
           ? border
-          : `0.5px solid ${borderColor ? borderColor : "transparent"}`,
+          : `0.5px solid ${borderColor ? borderColor : 'transparent'}`,
 
         ...style,
       }}
     >
       <div
         style={{
-          width: "100%",
-          height: "70px",
+          width: '100%',
+          height: '70px',
           backgroundColor: backgroundColor,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <text
           className="raleway T1"
-          style={{ color: textColor, width: "100%" }}
+          style={{ color: textColor, width: '100%' }}
         >
           {text}
         </text>
         <div
           style={{
-            width: "1px",
-            height: "70px",
+            width: '1px',
+            height: '70px',
             backgroundColor: textColor,
-            marginRight: "35px",
+            marginRight: '35px',
           }}
         ></div>
         <div
           style={{
-            marginRight: "13px",
-            marginTop: "35px",
-            marginBottom: "13px",
+            marginRight: '13px',
+            marginTop: '35px',
+            marginBottom: '13px',
           }}
         >
           <svg
