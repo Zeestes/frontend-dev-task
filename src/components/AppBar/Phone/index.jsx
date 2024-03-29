@@ -1,15 +1,14 @@
 import PhoneIcon from './Phoneicon';
-import useBreakpoints from '../../../hooks/useBreakpoints';
+import Breakpoint from '../../../theme/Breakpoint';
 
 export default function Phone(props) {
-  const { active } = useBreakpoints();
 
   return (
     <div className="Phone">
       <PhoneIcon></PhoneIcon>
-      {active === "lg" && (
-        <text className="montserrat T2">8-345-123-34-45</text>
-      )}
+      <Breakpoint at={["md", "lg"]}>
+        <text className="montserrat T2" style={{ marginLeft: "10px" }}>8-345-123-34-45</text>
+      </Breakpoint>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import useBreakpoints from "../../../hooks/useBreakpoints";
 import MenuIcon from "./menuicon";
+import Breakpoint from "../../../theme/Breakpoint";
 
 export default function Menu(props) {
 
@@ -7,21 +8,19 @@ export default function Menu(props) {
 
   const { menuButtons } = props;
   return (
-    <div className="Menu">
-      {(active === "xs" || active === "sm" || active === "md") &&
-        
-        <button
-          style={{ justifySelf: "flex-end" }}
-        >
+    <div className="menu">
+      <Breakpoint at={["xs", "sm"]}>
+        <button className="menu-button">
           <MenuIcon></MenuIcon>
         </button>
-      }
-      {active === "lg" &&
-        menuButtons.map((button) => (
+      </Breakpoint>
+      <Breakpoint at={["md", "lg"]}>
+        {menuButtons.map((button) => (
           <button>
             <text className="montserrat T3">{button.text}</text>
           </button>
         ))}
+      </Breakpoint>
     </div>
   );
 }

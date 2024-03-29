@@ -105,7 +105,7 @@ const Popup = forwardRef((props, ref) => {
               </text>
             </div>
             <div style={{ alignSelf: "flex-end" }}>
-              <Logo className="Logo"></Logo>
+              <Logo></Logo>
             </div>
           </div>
         </div>

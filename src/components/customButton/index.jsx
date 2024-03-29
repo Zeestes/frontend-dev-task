@@ -6,9 +6,11 @@ export default function CustomButton({
   border,
   onClick,
   style,
+  className,
 }) {
   return (
     <button
+      className={className}
       onClick={onClick}
       style={{
         display: "flex",
@@ -18,7 +20,7 @@ export default function CustomButton({
         border: border
           ? border
           : `0.5px solid ${borderColor ? borderColor : "transparent"}`,
-        
+
         ...style,
       }}
     >
@@ -46,7 +48,13 @@ export default function CustomButton({
             marginRight: "35px",
           }}
         ></div>
-        <div style={{marginRight: "13px",marginTop:"35px",marginBottom:"13px"}}>
+        <div
+          style={{
+            marginRight: "13px",
+            marginTop: "35px",
+            marginBottom: "13px",
+          }}
+        >
           <svg
             width="22"
             height="22"

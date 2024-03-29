@@ -33,7 +33,7 @@ export default function AppBar(props) {
   return (
     <div className="AppBar">
       <button>
-        <Logo className="Logo"></Logo>
+        <Logo></Logo>
       </button>
       <Menu menuButtons={menuButtons} />
       <Phone />

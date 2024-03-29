@@ -51,10 +51,15 @@
   font-size: 40px;
   font-weight: 600;
 }
+
 .montserrat.T2 {
   font-size: 18px;
   font-weight: 600;
 }
 .montserrat.T3 {
   font-size: 14px;
+}
+
+.H1.mobile {
+  font-size: 25px;
 }

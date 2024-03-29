@@ -1,6 +1,7 @@
 import CustomButton from '../../components/customButton';
 import { useRef } from "react";
 import Popup from '../../components/Popup';
+import Breakpoint from '../../theme/Breakpoint';
 
 
 export default function AboutMePage() {
@@ -19,7 +20,6 @@ export default function AboutMePage() {
     .then(response => response.json())
     .then(data => {
         gbpRate = Math.round(data.Valute.GBP.Value);
-        // make use of gbpRate as needed
     })
     .catch(error => console.error(error));
 
@@ -27,26 +27,23 @@ export default function AboutMePage() {
     <div className="page">
       <Popup ref={popupRef} />
       <div className="wrapper">
-        <div className="center" style={{ gridArea: "2 / 1 / 2 / 3" }}>
-          <div
-            className="header"
-            style={{ maxWidth: "747px", gridArea: "1 / 1 / 2 / 3" }}
-          >
+        <div className="center">
+          <div className="header">
             <text className="raleway H1">СОЗДАЮ УСЛОВИЯ ДЛЯ ВАШЕГО УСПЕХА</text>
           </div>
-          <div
-            className="subtitle"
-            style={{
-              height: "48px",
-              maxWidth: "675px",
-              gridArea: "2 / 1 / 3 / 3",
-            }}
-          >
-            <text className="raleway T2 subtitleText">
-              Когда ваше время и энергия лучше сфокусированы, стремление к новым
-              возможностям становится реальностью, ваш успех зависит от ваших
-              действий
-            </text>
+          <div className="subtitle subtitle-center">
+            <Breakpoint at={["md", "lg"]}>
+              <text className="raleway T2 subtitleText">
+                Когда ваше время и энергия лучше сфокусированы, стремление к
+                новым возможностям становится реальностью, ваш успех зависит от
+                ваших действий
+              </text>
+            </Breakpoint>
+            <Breakpoint at={["sm", "xs"]}>
+              <text className="raleway T2 subtitleText">
+                Ваш успех зависит от ваших действий
+              </text>
+            </Breakpoint>
           </div>
           <CustomButton
             className="butterWhite" //хах butter
@@ -54,7 +51,6 @@ export default function AboutMePage() {
             backgroundColor="white"
             textColor="#07305D"
             onClick={() => popupRef.current.handleOpen()}
-            style={{ gridArea: "3 / 1 / 4 / 2", alignSelf: "end" }}
           />
           <CustomButton
             className="buttonOther"
@@ -62,39 +58,30 @@ export default function AboutMePage() {
             borderColor="white"
             backgroundColor="transparent"
             textColor="white"
-            style={{ gridArea: "3 / 2 / 4 / 3", alignSelf: "end" }}
           />
         </div>
-        <div className="mentor">
-          {/* <div className="mentor-img"></div> */}
+        <div className="mentor">{/* <div className="mentor-img"></div> */}</div>
+        <div className="subtitle subtitle-quality">
+          <text className="montserrat T1">{`${tech}+`}</text>
+          <Breakpoint at={["md", "lg"]}>
+            <text className="raleway T2 subtitleText">
+              техник для достижения целей
+            </text>
+          </Breakpoint>
+          <Breakpoint at={["sm", "xs"]}>
+            <text className="raleway T2 subtitleText">техник</text>
+          </Breakpoint>
         </div>
-        <div
-          className="subtitle"
-          style={{
-            gridArea: "3 / 1 / 3 / 2",
-            alignSelf: "end",
-            width: "150px",
-            marginBottom: "60px",
-          }}
-        >
-          <text className="montserrat T1">{tech}</text>
-          <text className="raleway T2 subtitleText">
-            техник для достижения целей
-          </text>
-        </div>
-        <div
-          className="subtitle"
-          style={{
-            gridArea: "3 / 2 / 3 / 3",
-            alignSelf: "end",
-            width: "200px",
-            marginBottom: "60px",
-          }}
-        >
+        <div className="subtitle subtitle-percent">
           <text className="montserrat T1">{`${gbpRate}%`}</text>
-          <text className="raleway T2 subtitleText">
-            увеличение личной продуктивности
-          </text>
+          <Breakpoint at={["md", "lg"]}>
+            <text className="raleway T2 subtitleText">
+              увеличение личной продуктивности
+            </text>
+          </Breakpoint>
+          <Breakpoint at={["sm", "xs"]}>
+            <text className="raleway T2 subtitleText">продуктивности</text>
+          </Breakpoint>
         </div>
       </div>
     </div>
